@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GameHub</title>
+</head>
+<body>
+    <h1>GameHub</h1>
+    <ul>
+        {% for g in games %}
+            <li>{{ g.title }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
