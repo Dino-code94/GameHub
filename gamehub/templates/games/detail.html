@@ -1,49 +1,54 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- Main game detail container: left = image, right = title + description -->
-<div class="detail-container">
+<!-- page wrapper to center the whole content -->
+<div class="game-detail-wrapper">
 
-    <!-- Game cover image -->
-    <div class="detail-image">
-        <img src="{{ game.cover.url }}" alt="{{ game.title }}">
-    </div>
+    <!-- Main game detail container: left = image, right = title + description -->
+    <div class="detail-container">
 
-    <!-- Game title + description -->
-    <div class="detail-info">
-        <h1>{{ game.title }}</h1>
-        <p class="desc">{{ game.description }}</p>
-    </div>
-
-</div>
-
-<!-- Separator line -->
-<hr style="border-color:#444;">
-
-<!-- Comment section -->
-<h2>Comments</h2>
-
-<div class="comment-section">
-    {% for c in comments %}
-        <!-- Single comment display -->
-        <div class="comment-box">
-            <strong>{{ c.user.username }}:</strong> {{ c.text }}
+        <!-- Game cover image -->
+        <div class="detail-image">
+            <img src="{{ game.cover.url }}" alt="{{ game.title }}">
         </div>
-    {% empty %}
-        <p>No comments yet.</p>
-    {% endfor %}
-</div>
 
-<!-- Comment form (only visible if user is logged in) -->
-{% if user.is_authenticated %}
-<form method="POST">
-    {% csrf_token %}
-    <!-- textarea for comment -->
-    <textarea name="text" rows="3" placeholder="Write a comment..." class="comment-textarea"></textarea><br>
-    <button type="submit" class="comment-btn">Add comment</button>
-</form>
-{% else %}
-<p>You must login to comment.</p>
-{% endif %}
+        <!-- Game title + description -->
+        <div class="detail-info">
+            <h1>{{ game.title }}</h1>
+            <p class="desc">{{ game.description }}</p>
+        </div>
+
+    </div>
+
+    <!-- Separator line -->
+    <hr style="border-color:#444;">
+
+    <!-- Comment section -->
+    <h2>Comments</h2>
+
+    <div class="comment-section">
+        {% for c in comments %}
+            <!-- Single comment display -->
+            <div class="comment-box">
+                <strong>{{ c.user.username }}:</strong> {{ c.text }}
+            </div>
+        {% empty %}
+            <p>No comments yet.</p>
+        {% endfor %}
+    </div>
+
+    <!-- Comment form (only visible if user is logged in) -->
+    {% if user.is_authenticated %}
+    <form method="POST">
+        {% csrf_token %}
+        <!-- textarea for comment -->
+        <textarea name="text" rows="3" placeholder="Write a comment..." class="comment-textarea"></textarea><br>
+        <button type="submit" class="comment-btn">Add comment</button>
+    </form>
+    {% else %}
+    <p>You must login to comment.</p>
+    {% endif %}
+
+</div><!-- END wrapper -->
 
 {% endblock %}

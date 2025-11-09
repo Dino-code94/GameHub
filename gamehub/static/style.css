@@ -80,3 +80,21 @@ body {
 .comment-btn:hover {
     background: #17a94b;
 }
+
+/* center main content like ArcanaGate */
+.game-detail-wrapper {
+    max-width: 1100px;
+    margin: 0 auto; /* center horizontal */
+}
+
+/* force full vertical center on detail page */
+.game-detail-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 100px;   /* pomakni dolje */
+    margin-bottom: 100px;
+    min-height: 80vh;    /* da centriranje ima “visinu” */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
