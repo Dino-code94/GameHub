@@ -11,3 +11,16 @@ Users can view all games on the homepage, open game detail pages, and if logged 
 - Anonymous users see “You must be logged in to comment.”
 - Login / Logout / Register via Django auth
 - Admin panel at `/admin/`
+
+## Installation
+
+```bash
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
+python manage.py createsuperuser
+
+**commit message:**  
+`Add installation and admin setup section`
