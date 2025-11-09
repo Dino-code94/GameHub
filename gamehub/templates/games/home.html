@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>GameHub</title>
 </head>
 <body>
-    <h1>GameHub</h1>
-    <ul>
-        {% for g in games %}
-            <li>{{ g.title }}</li>
-        {% endfor %}
-    </ul>
+
+<h1>GameHub</h1>
+
+{% for game in games %}
+    <h2>{{ game.title }}</h2>
+    <p>{{ game.description }}</p>
+    {% if game.cover %}
+        <img src="{{ game.cover.url }}" alt="{{ game.title }}">
+    {% endif %}
+    <hr>
+{% endfor %}
+
 </body>
 </html>
