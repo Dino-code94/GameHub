@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- Outer wrapper centers page content nicely -->
+<!-- Main wrapper that keeps detail page centered nicely -->
 <div class="game-detail-wrapper">
 
-    <!-- main row: left image + right text -->
+    <!-- Top row = left side: cover image + right side: description -->
     <div class="detail-wrapper">
 
         <!-- Game cover image -->
@@ -12,7 +12,7 @@
             <img src="{{ game.cover.url }}" alt="{{ game.title }}">
         </div>
 
-        <!-- Game title + description -->
+        <!-- Game title + text -->
         <div class="detail-info">
             <h1>{{ game.title }}</h1>
             <p class="desc">{{ game.description }}</p>
@@ -20,14 +20,16 @@
 
     </div>
 
+    <!-- thin separator line -->
     <hr style="border-color:#444;">
 
-    <!-- comment section title -->
+    <!-- comments headline -->
     <h2>Comments</h2>
 
-    <!-- loop through comments -->
+    <!-- display each comment -->
     <div class="comment-section">
         {% for c in comments %}
+        <!-- Single comment box -->
         <div class="comment-box">
             <strong>{{ c.user.username }}:</strong> {{ c.text }}
         </div>
@@ -36,18 +38,21 @@
         {% endfor %}
     </div>
 
-    <!-- comment form if logged in -->
+    <!-- show comment textarea only if user is logged in -->
     {% if user.is_authenticated %}
     <form method="POST">
         {% csrf_token %}
+        <!-- comment input -->
         <textarea name="text" rows="3" placeholder="Write a comment..." class="comment-textarea"></textarea>
         <br>
+        <!-- submit button -->
         <button type="submit" class="comment-btn">Add comment</button>
     </form>
     {% else %}
+    <!-- guest cannot comment -->
     <p>You must login to comment.</p>
     {% endif %}
 
-</div><!-- wrapper end -->
+</div><!-- END page wrapper -->
 
 {% endblock %}

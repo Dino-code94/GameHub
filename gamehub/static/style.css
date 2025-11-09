@@ -251,3 +251,8 @@ body {
 .auth-wrapper button:hover {
     background: #17a94b;
 }
+
+/* glow animation class for comment button */
+.glow {
+    box-shadow: 0 0 12px rgba(29,185,84,0.7); /* bright green glow */
+}
