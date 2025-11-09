@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- Login form for existing users -->
-<h1>Login</h1>
+<!-- wrapper box that makes the login form centered and styled -->
+<div class="auth-wrapper">
 
-<form method="POST" autocomplete="off">
-    {% csrf_token %}
-    
-    <!-- username field -->
-    <input autocomplete="off" type="text" name="username" placeholder="Username"><br>
+    <!-- page title -->
+    <h2>Login</h2>
 
-    <!-- password field -->
-    <input autocomplete="new-password" type="password" name="password" placeholder="Password"><br>
+    <!-- login form -->
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
 
-    <button type="submit">Login</button>
-</form>
+        <!-- submit button -->
+        <button type="submit">Login</button>
+    </form>
+
+</div>
 
 {% endblock %}

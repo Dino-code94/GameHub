@@ -1,27 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- Registration form for new user account -->
-<h2>Register</h2>
+<!-- wrapper box centered on page -->
+<div class="auth-wrapper">
 
-<!-- Show password error if passwords do not match -->
-{% if error %}
-<p style="color:red;">{{ error }}</p>
-{% endif %}
+    <!-- page title -->
+    <h2>Register</h2>
 
-<form method="POST">
-    {% csrf_token %}
+    <!-- show password mismatch error -->
+    {% if error %}
+    <p style="color:red;">{{ error }}</p>
+    {% endif %}
 
-    <!-- username input -->
-    <input type="text" name="username" placeholder="Username" required><br><br>
+    <!-- registration form -->
+    <form method="POST">
+        {% csrf_token %}
+        <!-- username field -->
+        <input type="text" name="username" placeholder="Username" required><br>
 
-    <!-- password input -->
-    <input type="password" name="password" placeholder="Password" required><br><br>
+        <!-- password input -->
+        <input type="password" name="password" placeholder="Password" required><br>
 
-    <!-- confirm password input -->
-    <input type="password" name="password2" placeholder="Confirm Password" required><br><br>
+        <!-- confirm password input -->
+        <input type="password" name="password2" placeholder="Confirm Password" required><br>
 
-    <button type="submit">Register</button>
-</form>
+        <!-- submit button -->
+        <button type="submit">Register</button>
+    </form>
+
+</div>
 
 {% endblock %}
