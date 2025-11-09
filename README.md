@@ -38,3 +38,22 @@ python manage.py createsuperuser
 - text
 - created datetime
 
+## Optional Sample Data (Games Seed)
+
+```bash
+python manage.py shell
+
+from games.models import Game
+
+games = [
+    {"title":"Diablo II", "description":"Legendary dark fantasy ARPG."},
+    {"title":"Oblivion", "description":"Massive open-world fantasy adventure."},
+    {"title":"Age of Empires II", "description":"Classic medieval RTS strategy."},
+    {"title":"World of Warcraft", "description":"Iconic MMORPG in Azeroth."},
+    {"title":"The Witcher 3", "description":"Story-driven RPG with consequences."},
+    {"title":"Path of Exile", "description":"Deep ARPG with crazy build system."},
+]
+
+for g in games:
+    Game.objects.create(**g)
+```
