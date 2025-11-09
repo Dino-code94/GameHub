@@ -4,4 +4,22 @@
 
 <p>{{ game.description }}</p>
 
-<p><a href="/games/">Back to games</a></p>
+<hr>
+
+<h2>Comments</h2>
+
+{% for c in comments %}
+    <p><strong>{{ c.user.username }}:</strong> {{ c.text }}</p>
+{% empty %}
+    <p>No comments yet.</p>
+{% endfor %}
+
+{% if user.is_authenticated %}
+<form method="POST">
+    {% csrf_token %}
+    <textarea name="text" rows="3" cols="40"></textarea><br>
+    <button type="submit">Add comment</button>
+</form>
+{% else %}
+<p>You must login to comment.</p>
+{% endif %}
