@@ -37,3 +37,20 @@ body {
     color: #bbb;
     line-height: 1.4;
 }
+
+/* comment section styling */
+.comment-section {
+    margin-top: 20px;
+}
+
+.comment-box {
+    background: #2d2d2d;
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.comment-box strong {
+    color: #1db954; /* green username color */
+}
