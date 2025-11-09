@@ -1,10 +1,13 @@
-<h2>Login</h2>
-<form method="POST">
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Login</h1>
+
+<form method="POST" autocomplete="off">
     {% csrf_token %}
-    {{ form.as_p }}
+    <input autocomplete="off" type="text" name="username" placeholder="Username"><br>
+    <input autocomplete="new-password" type="password" name="password" placeholder="Password"><br>
     <button type="submit">Login</button>
 </form>
-<p><a href="/accounts/logout/">Logout</a></p>
 
-<p>No account? <a href="/accounts/register/">Register</a></p>
-
+{% endblock %}
