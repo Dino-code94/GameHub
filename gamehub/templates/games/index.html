@@ -1,25 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- Page title -->
+<!-- Page title for main game catalog -->
 <h1>Games</h1>
 
-<!-- Grid container for game cards (3 columns layout) -->
+<!-- Grid layout of game cards - 3 per row -->
 <div class="games-grid">
 
     {% for game in games %}
-    <!-- Single game tile -->
+    <!-- Single game card box -->
     <div class="game-card">
-
-        <!-- Link to game detail view -->
         <a href="{% url 'game_detail' game.id %}">
-
-            <!-- Game cover image -->
             <img src="{{ game.cover.url }}" alt="{{ game.title }}">
-
-            <!-- Game title -->
             <h3>{{ game.title }}</h3>
-
         </a>
     </div>
     {% endfor %}
