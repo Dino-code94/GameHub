@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-9_d17l58yrnc@ijwy$8#21beo_celx2oy+zkv@)q4zge=5u*4)
 # dev mode – must be False when deployed
 DEBUG = True
 
-ALLOWED_HOSTS = []  # will be set in deployment stage
+ALLOWED_HOSTS = ['*']
 
 # main applications used in this project
 INSTALLED_APPS = [
@@ -90,3 +90,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+import django_heroku
+django_heroku.settings(locals())
