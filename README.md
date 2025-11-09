@@ -24,3 +24,17 @@ python manage.py createsuperuser
 
 **commit message:**  
 `Add installation and admin setup section`
+```
+## Models
+
+**Game**
+- title
+- description
+- cover image (optional)
+
+**Comment**
+- game (ForeignKey)
+- user (ForeignKey)
+- text
+- created datetime
+
