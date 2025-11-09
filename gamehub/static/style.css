@@ -141,3 +141,22 @@ body {
     margin-top: 10px;
     color: #ddd;
 }
+
+/* fix game grid width + center */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.game-card {
+    text-align: center;
+}
+
+.game-card img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
