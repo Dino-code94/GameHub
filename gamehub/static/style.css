@@ -14,3 +14,26 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+/* game detail page layout */
+.detail-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.detail-image img {
+    width: 350px;
+    border-radius: 6px;
+    border: 2px solid #444;
+}
+
+.detail-info h1 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.desc {
+    color: #bbb;
+    line-height: 1.4;
+}
