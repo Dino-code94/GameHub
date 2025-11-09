@@ -1,0 +1,12 @@
+<h1>Games</h1>
+
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+    {% for game in games %}
+    <div style="border: 1px solid #333; padding: 10px; text-align: center;">
+        <a href="{% url 'game_detail' game.id %}">
+            <img src="{{ game.cover.url }}" alt="{{ game.title }}" style="width: 100%; height: auto;">
+            <h3>{{ game.title }}</h3>
+        </a>
+    </div>
+    {% endfor %}
+</div>
