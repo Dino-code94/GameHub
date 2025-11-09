@@ -54,3 +54,29 @@ body {
 .comment-box strong {
     color: #1db954; /* green username color */
 }
+
+/* comment form styling */
+.comment-textarea {
+    width: 100%;
+    background: #2d2d2d;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 10px;
+    resize: vertical;
+}
+
+.comment-btn {
+    background: #1db954;
+    color: black;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.comment-btn:hover {
+    background: #17a94b;
+}
