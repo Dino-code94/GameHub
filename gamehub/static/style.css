@@ -98,3 +98,46 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+
+/* make navbar thicker */
+.navbar {
+    padding: 15px;
+    font-size: 18px;
+}
+
+/* smaller game grid cards */
+.game-card img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* center each card content better */
+.game-card {
+    text-align: center;
+}
+
+/* uniform card look */
+.game-card {
+    background: #222;
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* consistent image sizing */
+.game-card img {
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* game title under image */
+.game-card h3 {
+    margin-top: 10px;
+    color: #ddd;
+}
