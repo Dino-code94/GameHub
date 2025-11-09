@@ -62,3 +62,8 @@ for g in games:
 You can access the Django admin at:
 
 http://127.0.0.1:8000/admin/
+
+## Quality & Testing
+
+The application was manually tested — navigation, commenting, login/logout, and admin access were all confirmed working.
+Code style follows Flake8 conventions.
