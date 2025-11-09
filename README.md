@@ -57,3 +57,8 @@ games = [
 for g in games:
     Game.objects.create(**g)
 ```
+## Admin Panel
+
+You can access the Django admin at:
+
+http://127.0.0.1:8000/admin/
