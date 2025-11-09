@@ -6,11 +6,18 @@
 </head>
 <body>
 
+<!-- Page title -->
 <h1>GameHub</h1>
 
+<!-- Loop through all games and show basic info -->
 {% for game in games %}
+    <!-- Game title -->
     <h2>{{ game.title }}</h2>
+
+    <!-- Game description -->
     <p>{{ game.description }}</p>
+
+    <!-- Show cover image only if uploaded -->
     {% if game.cover %}
         <img src="{{ game.cover.url }}" alt="{{ game.title }}">
     {% endif %}

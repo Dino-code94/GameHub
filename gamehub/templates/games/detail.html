@@ -1,25 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Game title -->
 <h1>{{ game.title }}</h1>
 
+<!-- Game cover image -->
 <img src="{{ game.cover.url }}" alt="{{ game.title }}" style="width:300px; height:auto;">
 
+<!-- Game description -->
 <p>{{ game.description }}</p>
 
 <hr>
 
+<!-- Comments section -->
 <h2>Comments</h2>
 
 {% for c in comments %}
+    <!-- Single comment -->
     <p><strong>{{ c.user.username }}:</strong> {{ c.text }}</p>
 {% empty %}
     <p>No comments yet.</p>
 {% endfor %}
 
+<!-- Only logged-in users may comment -->
 {% if user.is_authenticated %}
 <form method="POST">
     {% csrf_token %}
+    <!-- Comment input -->
     <textarea name="text" rows="3" cols="40"></textarea><br>
     <button type="submit">Add comment</button>
 </form>
 {% else %}
 <p>You must login to comment.</p>
 {% endif %}
+
+{% endblock %}

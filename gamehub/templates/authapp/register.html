@@ -1,17 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<!-- Registration form for new user account -->
 <h2>Register</h2>
 
+<!-- Show password error if passwords do not match -->
 {% if error %}
 <p style="color:red;">{{ error }}</p>
 {% endif %}
 
 <form method="POST">
     {% csrf_token %}
+
+    <!-- username input -->
     <input type="text" name="username" placeholder="Username" required><br><br>
+
+    <!-- password input -->
     <input type="password" name="password" placeholder="Password" required><br><br>
+
+    <!-- confirm password input -->
     <input type="password" name="password2" placeholder="Confirm Password" required><br><br>
+
     <button type="submit">Register</button>
 </form>
 

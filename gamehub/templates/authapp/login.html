@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<!-- Login form for existing users -->
 <h1>Login</h1>
 
 <form method="POST" autocomplete="off">
     {% csrf_token %}
+    
+    <!-- username field -->
     <input autocomplete="off" type="text" name="username" placeholder="Username"><br>
+
+    <!-- password field -->
     <input autocomplete="new-password" type="password" name="password" placeholder="Password"><br>
+
     <button type="submit">Login</button>
 </form>
 

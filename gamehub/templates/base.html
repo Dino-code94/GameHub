@@ -7,25 +7,28 @@
 
 <body>
 
+    <!-- Top navigation bar -->
     <div style="background:#222; padding:10px; color:white; display:flex; justify-content:space-between;">
         <div>
+            <!-- Link back to homepage -->
             <a href="/" style="color:white; margin-right:10px;">Games</a>
-
         </div>
+
         <div>
             {% if user.is_authenticated %}
+            <!-- Display logged in username + logout -->
             <span>Logged in as {{ user.username }}</span>
             <a href="{% url 'logout' %}" style="color:white; margin-left:10px;">Logout</a>
 
-
-
             {% else %}
+            <!-- Login + register links for guests -->
             <a href="/accounts/login/" style="color:white; margin-right:10px;">Login</a>
             <a href="/accounts/register/" style="color:white;">Register</a>
             {% endif %}
         </div>
     </div>
 
+    <!-- Main content placeholder -->
     <div style="padding: 20px">
         {% block content %}{% endblock %}
     </div>
