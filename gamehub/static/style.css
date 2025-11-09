@@ -1,0 +1,16 @@
+/* global theme base */
+body {
+    background: #111;
+    color: #eee;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* top navigation bar */
+.navbar {
+    background: #222;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
